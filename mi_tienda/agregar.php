@@ -1,17 +1,12 @@
-
-
-
-
 <?php
 session_start();
 if (!isset($_SESSION['admin'])) {
     header("Location: login.php");
     exit;
 }
+
 include("conexion.php");
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -37,17 +32,32 @@ if (isset($_POST['guardar'])) {
     $descripcion = $_POST['descripcion'];
     $precio = $_POST['precio'];
 
-    $imagen = $_FILES['imagen']['name'];
-    $ruta = "imagenes/" . basename($imagen);
-    move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta);
+    // Ruta donde se guardarán las imágenes
+    $carpeta = "imagenes/";
 
-    $insertar = "INSERT INTO productos(nombre, descripcion, precio, imagen) 
-                 VALUES ('$nombre', '$descripcion', '$precio', '$imagen')";
+    // Crear la carpeta si no existe
+    if (!file_exists($carpeta)) {
+        mkdir($carpeta, 0777, true);
+    }
 
-    if (mysqli_query($conexion, $insertar)) {
-        echo "<p>✅ Producto agregado correctamente.</p>";
+    // Procesar imagen
+    $nombre_imagen = basename($_FILES['imagen']['name']);
+    $ruta_destino = $carpeta . $nombre_imagen;
+
+    // Verificar si se subió correctamente el archivo
+    if (move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta_destino)) {
+
+        // Guardar solo el nombre o la ruta completa en la base de datos
+        $insertar = "INSERT INTO productos(nombre, descripcion, precio, imagen)
+                     VALUES ('$nombre', '$descripcion', '$precio', '$ruta_destino')";
+
+        if (mysqli_query($conexion, $insertar)) {
+            echo "<p>✅ Producto agregado correctamente.</p>";
+        } else {
+            echo "<p>❌ Error al guardar en la base de datos: " . mysqli_error($conexion) . "</p>";
+        }
     } else {
-        echo "<p>❌ Error: " . mysqli_error($conexion) . "</p>";
+        echo "<p>⚠️ Error al subir la imagen. Verifica permisos o ruta.</p>";
     }
 }
 ?>
