@@ -1,0 +1,243 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #0077cc;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+.producto {
+    background: white;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 10px;
+    background: #25d366;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.boton.eliminar {
+    background: #e63946;
+}
+
+.formulario {
+    width: 400px;
+    background: white;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.formulario input, .formulario textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.formulario p {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+header h1 {
+    margin: 0;
+}
+/* Sección de Testimonios */
+.testimonios {
+    background: #e8f4ff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonios h2 {
+    color: #0077cc;
+    margin-bottom: 20px;
+}
+
+.testimonio {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.testimonio p {
+    font-style: italic;
+    color: #333;
+}
+
+.testimonio span {
+    display: block;
+    margin-top: 10px;
+    color: #555;
+}
+
+/* Sección de FAQ */
+.faq {
+    background: #fff;
+    padding: 40px 20px;
+}
+
+.faq h2 {
+    color: #0077cc;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pregunta {
+    max-width: 700px;
+    margin: 10px auto;
+    background: #f9f9f9;
+    border-left: 5px solid #0077cc;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.pregunta h3 {
+    margin: 0;
+    color: #0077cc;
+}
+
+.pregunta p {
+    color: #444;
+    margin-top: 5px;
+}
+
+/* Sección de Contacto */
+.contacto {
+    background: #e8f4ff;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.contacto h2 {
+    color: #0077cc;
+    margin-bottom: 10px;
+}
+
+.contacto p {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#formContacto {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+#formContacto input, 
+#formContacto textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#formContacto button {
+    background: #25d366;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#formContacto button:hover {
+    background: #1ebe57;
+}
+
+/* Formulario de contacto */
+.contacto {
+    background: #e6f2ff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contacto h2 {
+    color: #0077cc;
+    margin-bottom: 10px;
+}
+
+.contacto p {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+form label {
+    font-weight: bold;
+    color: #333;
+}
+
+form input, form textarea {
+    width: 90%;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+form button {
+    background: #0077cc;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #005fa3;
+}
